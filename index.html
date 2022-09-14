@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <title>TONU Phones Note Generator</title>
+
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    
+    <style>
+		$link-light-grey: #6c757d;
+		$primary-orange: #fec503; //before: fed136
+		$footer-background-light-grey: #212529;
+		$footer-background-grey: #1a1d20;
+		$social-buttons-circle-dark-grey: #1a1d20;
+
+		.col-md-4:nth-child(even) {
+		  // background: blue;
+		}
+		.col-md-4:nth-child(odd) {
+		  // background: red;
+		}
+
+		a {
+		  color: $link-light-grey;
+		}
+		a:hover {
+		  color: $primary-orange;
+		  text-decoration: none;
+		}
+
+		::selection {
+		  background: $primary-orange;
+		  text-shadow: none;
+		}
+
+		footer {
+		  padding: 2rem 0;
+		  background-color: #212529;
+		  // .container .row:not(:last-child) {
+		  //   padding-bottom: 2rem;
+		  // }
+		}
+
+		.footer-column:not(:first-child) {
+		    padding-top: 2rem;
+		    @media (min-width: 768px) {
+		      padding-top: 0rem;
+		    }
+		  }
+
+		.footer-column {
+		  text-align: center;
+		  //border: red solid 1px;
+		  .nav-item {
+		    .nav-link {
+		      padding: 0.1rem 0;
+		    }
+		    span.nav-link {
+		      color: $link-light-grey;
+		    }
+		    span.footer-title {
+		      font-size: 14px;
+		      font-weight: 700;
+		      color: #fff;
+		      text-transform: uppercase;
+		    }
+		    .fas {
+		      margin-right: 0.5rem;
+		    }
+		  }
+		  ul {
+		    display: inline-block;
+		    @media (min-width: 768px) {
+		      text-align: left;
+		    }
+		    //border: yellow solid 1px;
+		  }
+		}
+
+		ul.social-buttons {
+		  margin-bottom: 0;
+		}
+
+		ul.social-buttons li a:active,
+		ul.social-buttons li a:focus,
+		ul.social-buttons li a:hover {
+		  background-color: $primary-orange;
+		}
+
+		ul.social-buttons li a {
+		  font-size: 20px;
+		  line-height: 40px;
+		  display: block;
+		  width: 40px;
+		  height: 40px;
+		  -webkit-transition: all 0.3s;
+		  -moz-transition: all 0.3s;
+		  transition: all 0.3s;
+		  color: #fff;
+		  border-radius: 100%;
+		  outline: 0;
+		  background-color: $footer-background-grey;
+		}
+
+		footer .quick-links {
+		  font-size: 90%;
+		  line-height: 40px;
+		  margin-bottom: 0;
+		  text-transform: none;
+		  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+
+		.copyright {
+		  color: white;
+		}
+
+		.fa-ellipsis-h {
+		  color: white;
+		  padding: 2rem 0;
+		}
+    </style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light navbar-laravel"></nav>
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header"><center><b>TONU Phones Note Generator</b></center></div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Caller's Name:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="callersname" id="callersname" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Caller's Designation:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="callersdesignation" id="callersdesignation" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Caller's Phone/Email:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="callersphoneemail" id="callersphoneemail" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">UF Load Number:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="ufloadnumber" id="ufloadnumber" required="">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Issue:</label>
+                                    <div class="col-md-6">
+                                    	<textarea rows = "5" cols = "49" name = "issue" id="issue" required=""> </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Driver Arrival/Check in Time:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="driverarrival" id="driverarrival" required="">
+                                    </div>
+                                </div>
+
+                                 <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">PU Number Used:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="punumberused" id="punumberused" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">What exactly was the driver told about the issue:</label>
+                                    <div class="col-md-6">
+                                        <textarea rows = "5" cols = "49" name = "drivertold" id="drivertold" required=""></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Name and Designation of facility employee driver talked to:</label>
+                                    <div class="col-md-6">
+                                        <textarea rows = "5" cols = "49" name = "drivertalked" id="drivertalked" required=""> </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Action:</label>
+                                    <div class="col-md-6">
+                                        <textarea rows = "5" cols = "49" name = "action" id="action" required=""> </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">ZD Link:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="zdlink" id="zdlink" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">WL Link:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="wllink" id="wllink" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">PC Link:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="pclink" id="pclink" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Carrier Release Time:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="releasetime" id="releasetime" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Carrier Requesting for TONU?</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="requesting" id="requesting" required="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Carrier Name:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="carriername" id="carriername" required="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 offset-md-4">
+                                   	<button type="submit" value="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="submit" name="submit">Generate</button>
+                                   	<button type="reset" class="btn btn-danger">Reset</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Generated Details</h5>						
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+			</div>
+
+			<div class="modal-body" id="copy">
+				<h6 id="modal_body"></h6></center>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" onclick="copyEvent('copy')" class="btn btn-success"> <i class="fa fa-copy"></i>  Copy</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br>
+
+<footer>
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-4 box">
+				<span class="copyright quick-links">Created By: Martin John Barrios</span>
+      		</div>
+    	</div>
+  	</div>
+</footer>
+
+
+	<script type="text/javascript">
+		$("#submit").click(function () {
+			var callersname = $("#callersname").val();
+			var callersdesignation = $("#callersdesignation").val();
+			var callersphoneemail = $("#callersphoneemail").val();
+			var ufloadnumber = $("#ufloadnumber").val();
+			var issue = $("#issue").val();
+			var driverarrival = $("#driverarrival").val();
+			var punumberused = $("#punumberused").val();
+			var drivertold = $("#drivertold").val();
+			var drivertalked = $("#drivertalked").val();
+			var action = $("#action").val();
+			var zdlink = $("#zdlink").val();
+			var wllink = $("#wllink").val();
+			var pclink = $("#pclink").val();
+			var releasetime = $("#releasetime").val();
+			var requesting = $("#requesting").val();
+			var carriername = $("#carriername").val();
+
+			var str = "Caller's Name: " + callersname
+			   + " <br>Caller's Designation: " + callersdesignation
+			   + " <br>Caller's Phone/Email: " + callersphoneemail
+			   + " <br>UF Load Number: " + ufloadnumber
+			   + " <br>Issue: " + issue
+			   + " <br>Driver Arrival/Check in Time: " + driverarrival
+			   + " <br>PU Number Used: " + punumberused
+			   + " <br>What exactly was the driver told about the issue: " + drivertold
+			   + " <br>Name and Designation of facility employee driver talked to: " + drivertalked
+			   + " <br>Action: " + action
+			   + " <br>ZD Link: " + zdlink
+			   + " <br>WL Link: " + wllink
+			   + " <br>PC Link: " + pclink
+			   + " <br>Carrier Release Time: " + releasetime
+			   + " <br>Carrier Requesting for TONU? " + requesting
+			   + " <br>Carrier Name: " + carriername;
+			$("#modal_body").html(str);
+		});
+	</script>
+
+	<script>
+	    function copyEvent(id)
+	    {
+	        var str = document.getElementById(id);
+	        window.getSelection().selectAllChildren(str);
+	        document.execCommand("Copy")
+	    }
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
